@@ -1,0 +1,498 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/basic.css"/>
+	<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="css/theme.css"/>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.raty.min.js" type="text/javascript" charset="utf-8"></script>
+   <style type="text/css">
+		.rule-item {
+			width: 100%;
+			padding: 20px 0;
+		}
+		
+		.rule-item dt {
+			float: left;
+			font-size: 16px;
+			height: 100px;
+			width: 100px;
+			border-radius: 50%;
+			overflow: hidden;
+		}
+		
+		.rule-item dd {
+			float: left;
+			margin-left: 40px;
+			width: 600px;
+			font-size: 16px;
+			line-height: 20px;
+			padding: 20px 0;
+			color: #666;
+		}
+	</style>
+    
+</head>
+<body>
+	<div class="wrapper">
+   
+    <div class="w1200 clearfix">
+        <div class="clearfix">
+            <div class="location">
+                <a href="javascript:;">全部结果</a>&gt;
+                <a href="javascript:;" class="current">"Trudi意大利特鲁迪"</a>
+            </div>
+        </div>
+   
+<div class="goodsDetailsBox clearfix mb10">
+    <div class="detailsLeft fl">
+	<div class="goodsMainPic" style="position: relative;">
+		<a onclick="return false;" id="jqzoom" style="outline-style: none; text-decoration: none; cursor: crosshair; display: block; position: relative; height: 440px; width: 440px;">
+			<img id="current_img" src="images/big.jpg"
+				width="440" height="440" style="display: block; position: absolute; top: 0px; left: 0px;">
+		</a>
+		<ul class="small_pp">
+			<li class="fl">
+				<img src="images/big_xstj.png">
+			</li>
+		</ul>
+	</div>
+	<!--goodsMainPic ed-->
+
+	<ul class="goodsScrollPic clearfix">
+		<li class="btnNext" id="next1">
+			<a href="javascript:void(0)"></a>
+		</li>
+		<li class="picList" style="width: 77px; position: relative;">
+			<ul class="clearfix" style="width: 385px; position: absolute; top: 0px; left: 0px;">
+				<li class="image_list current" code="">
+					<a href="javascript:;">
+						<img code="" src="images/small.jpg" width="60" height="60" alt="">
+					</a>
+				</li>
+				<li class="image_list">
+					<a href="javascript:;">
+						<img code="" src="images/small.jpg" width="60" height="60" alt="">
+					</a>
+				</li>
+				<li class="image_list">
+					<a href="javascript:;">
+						<img code="" src="images/small.jpg" width="60" height="60" alt="">
+					</a>
+				</li>
+				<li class="image_list">
+					<a href="javascript:;">
+						<img code="" src="images/small.jpg" width="60" height="60" alt="">
+					</a>
+				</li>
+				<li class="image_list">
+					<a href="javascript:;">
+						<img code="" src="images/small.jpg" width="60" height="60" alt="">
+					</a>
+				</li>
+				
+			</ul>
+		</li>
+		<li class="btnPrevious" id="prev1">
+			<a href="javascript:void(0)"></a>
+		</li>
+	</ul>
+	<!--goodsScrollPic ed-->
+</div>
+<!--detailsLeft ed-->
+
+
+    <div class="detailRight fr" id="1F">
+        <h2 class="fl">（限时特价）Trudi意大利特鲁迪15片</h2>
+        <div class="cb detail_discription">
+            <p></p>
+        </div>
+        
+        <div class="detail_price clearfix">
+            <p class="f14 color3 mt25">促销价：<span class=" colorRed2 f24 fb" id="price_current">￥76.00</span> <span class="sale_num">销量：</span><span class="f16 colorRed2 fb">664</span></p>
+            <p class="f14 color3 mt25">市场价：<del class="color9" id="market_price_current">￥167.00</del><span class="sale_num">累计评价：</span><span class="f16 colorRed2 fb">664</span></p>
+        </div>
+        <div class="freight pr">
+            <p>运费:<span class="start">国内保税仓</span>至<span class="end"><em id="location_name">广东省深圳市宝安区</em></span>快递：￥<em id="express_fee">8.00</em></p>
+            <!-- <p>综合税:<span class="colorRed ml10">本商品税率0%,订单关税<=50免征。</span></p> -->
+
+            <!--切换地址弹框-->
+            <div class="addr_box clearfix none">
+                <h2>请选择地址<i></i></h2>
+                <div class="common_addr pr">
+                    <h2>常用地址</h2>
+                    <div class="default">
+                        <p>(默认)    广东省深圳市宝安区</p>
+                            <span class="default_detail">
+                            	       广东省深圳市宝安区 </span>
+                    </div>
+                </div>
+                <div class="new_addr">
+                    <h2>选择新地址</h2>
+                    <ul class="tab_title clearfix">
+                        <li id="province_select" class="current">请选择</li>
+                        <li id="city_selec">请选择</li>
+                        <li id="district_selec">请选择</li>
+                    </ul><!--tab_title-->
+                    <div class="tab_con clearfix">
+                        <ul class="addr_list" id="province">
+							<li key="110000">北京</li>
+							<li key="120000">天津</li>
+							<li key="130000">河北省</li>
+						</ul>
+                        <ul class="addr_list none" id="city">
+                        </ul>
+                        <ul class="addr_list  none" id="district">
+                        </ul>
+                    </div>
+                    <input id="province_num" class="none" value="">
+                    <input id="city_num" class="none" value="">
+                </div>
+            </div><!--addr_box ed-->
+        </div>
+
+       <div class="detail_txt">
+	<dl class="goodsColor clearfix mt10" id="color">
+		<dt class="fl">系列：</dt>
+		<dd class="fl current" alt="BXXL" name="" value="BXXL">
+			BXXL
+			 <em></em>
+		</dd>
+	</dl>
+	<dl class="goodsSize clearfix" id="size">
+		<dt class="fl">规格：</dt>
+		<dd class="fl current" alt="0015PC" name="15片" value="">15片<em></em></dd>
+	</dl>
+
+	<p class="clearfix goodsNum">
+		<span class="tit fl">数量:</span>
+		<span class="choose_box clearfix fl ml20 mb10">
+                        <a class="subtract in_b fl" href="javascript:;">-</a>
+                        <input id="choose_num" valunum="" class="chooseNum in_b fl" type="text" value="1" readonly="">
+                        <a class="plus in_b fl" href="javascript:;">+</a>
+                    </span>
+		<input type="hidden" id="real_num" value="298">
+		<span class="fl mt12 f14 colorC ml10">库存：<em id="real_num_xx">298</em></span>
+	</p>
+
+	<div class="clearfix pr mt20">
+		<a id="buy_now" class="mr15 fl" href="javascript:void(0)" onclick="go_order()">
+			<input type="hidden" id="type" value="fast">
+			<img class="block" src="images/buyNow.png" width="200" height="50">
+		</a>
+		<a id="add_cart" class="fl add_btn" href="javascript:void(0)">
+			<img class="block" src="images/btnAddCar.png" width="200" height="50">
+		</a>
+		<a id="fave_btn" fave_id="0" class="fl collect ">收藏(<em id="fav_num">0</em>)</a>
+		
+	</div>
+            
+            <div class="clearfix pr mt30">
+                <span class="good_comment fl">好评：<em>0</em></span>
+                <div class="share_links fl">
+                	<p class="fl f14 color6">分享：</p>
+                    <ul class="fl bdsharebuttonbox bdshare-button-style0-24" data-tag="share_1" data-bd-bind="1464577892681">
+                        <li><a href="javascript:;" class="bds_weixin" data-cmd="weixin" style="background:url(images/share1.png) no-repeat center center;"></a></li>
+                        <li><a href="javascript:;" class="bds_tsina" data-cmd="tsina" style="background:url(images/share1.png) no-repeat center center;"></a></li>
+                        <li><a href="javascript:;" class="bds_tqq" data-cmd="tqq" style="background:url(images/share1.png) no-repeat center center;"></a></li>
+                        <li><a href="javascript:;" class="bds_qzone" data-cmd="qzone" style="background:url(images/share1.png) no-repeat center center;"></a></li>
+                        <li><a href="javascript:;" class="bds_renren" data-cmd="renren" style="background:url(images/share1.png) no-repeat center center;"></a></li>
+                        <li><a href="javascript:;" class="bds_douban" data-cmd="douban" style="background:url(images/share1.png) no-repeat center center;"></a></li>
+                    </ul>
+                </div>
+               
+                <div>
+                            <div><p class="cb f14 color9">服务承诺：&nbsp;&nbsp;&nbsp;&nbsp;按时发货&nbsp;&nbsp;&nbsp;&nbsp;安心退货&nbsp;&nbsp;&nbsp;&nbsp;极速退货</p></div>
+                            </div>
+
+            </div>
+
+            <!--没有选择规格时弹框-->
+            <input id="href_ff" class="none" value="0">
+            <input id="please_select" class="none" value="0">
+            <div class="please_select none">
+                <h2>请选择所要的商品信息<i></i></h2>
+                                    <dl class="goodsColor clearfix mt10" id="color_xxx">
+                        <dt class="fl">系列：</dt>
+                                                    <dd class="fl" alt="BXXL" value="">
+                                                                <em></em>
+                            </dd>
+                                            </dl>
+                                                    <dl class="goodsSize clearfix" id="size_xxx">
+                        <dt class="fl">规格：</dt>
+                                                    <dd alt="0015PC" class="fl" value="">
+                                15片<em></em>
+                            </dd>
+                                            </dl>
+                                <p class="clearfix goodsNum ml12">
+                    <span class="tit fl">数量:</span>
+                        <span class="choose_box clearfix fl ml20 mb10">
+                            <a class="subtract in_b fl" href="javascript:;">-</a>
+                            <input id="choose_num_xxx" class="chooseNum in_b fl" type="text" value="1" onkeyup="value=value.replace(/[^\d]/g,'')">
+                            <a class="plus in_b fl" href="javascript:;">+</a>
+                        </span>
+                    <span class="fl mt12 f14 colorC ml10">库存：<em id="real_num_xxx">298</em></span>
+                </p>
+
+                <p><a href="javascript:;" class="confirm">确认</a></p>
+            </div><!--please_select ed-->
+            <!--买二送一-->
+                    </div><!--detail_txt ed-->
+    </div><!--detailRight ed-->
+</div><!--goodsDetailsBox ed-->
+
+
+
+        
+<!--  看了又看 -->
+	<div class="see_then_see clearfix">
+			<h2><span>看了又看</span></h2>
+        	<ul>
+				<li>
+					<a href="#">
+						<div class="bk">
+							<img height="160px" src="images/prod.jpg">
+							<div class="good_info">
+								<p class="name">MuscleTech美国肌肉科技铂金蛋白粉奶油曲奇味2270g</p>
+								<p class="price">￥395.00</p>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="bk">
+							<img height="160px" src="images/prod.jpg">
+							<div class="good_info">
+								<p class="name">MuscleTech美国肌肉科技铂金蛋白粉奶油曲奇味2270g</p>
+								<p class="price">￥395.00</p>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="bk">
+							<img height="160px" src="images/prod.jpg">
+							<div class="good_info">
+								<p class="name">MuscleTech美国肌肉科技铂金蛋白粉奶油曲奇味2270g</p>
+								<p class="price">￥395.00</p>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="bk">
+							<img height="160px" src="images/prod.jpg">
+							<div class="good_info">
+								<p class="name">MuscleTech美国肌肉科技铂金蛋白粉奶油曲奇味2270g</p>
+								<p class="price">￥395.00</p>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="bk">
+							<img height="160px" src="images/prod.jpg">
+							<div class="good_info">
+								<p class="name">MuscleTech美国肌肉科技铂金蛋白粉奶油曲奇味2270g</p>
+								<p class="price">￥395.00</p>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li style="margin-right: 0;">
+					<a href="#">
+						<div class="bk">
+							<img height="160px" src="images/prod.jpg">
+							<div class="good_info">
+								<p class="name">MuscleTech美国肌肉科技铂金蛋白粉奶油曲奇味2270g</p>
+								<p class="price">￥395.00</p>
+							</div>
+						</div>
+					</a>
+				</li>
+			</ul>
+        </div>
+
+	
+
+	<!--热卖推荐-->
+        <div class="hot_sale fl clearfix">
+        	<h2 style="margin-bottom: 20px;">热卖推荐</h2>
+        	        	<ul>
+							<li>
+								<a href="#">
+									<img height="160px" src="images/tuijian.jpg">
+									<div class="good_info">
+										<p class="name">韩国EDOPack扁桃仁饼133g</p>
+										<p class="price">￥13</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img height="160px" src="images/tuijian.jpg">
+									<div class="good_info">
+										<p class="name">韩国EDOPack扁桃仁饼133g</p>
+										<p class="price">￥13</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img height="160px" src="images/tuijian.jpg">
+									<div class="good_info">
+										<p class="name">韩国EDOPack扁桃仁饼133g</p>
+										<p class="price">￥13</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img height="160px" src="images/tuijian.jpg">
+									<div class="good_info">
+										<p class="name">韩国EDOPack扁桃仁饼133g</p>
+										<p class="price">￥13</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img height="160px" src="images/tuijian.jpg">
+									<div class="good_info">
+										<p class="name">韩国EDOPack扁桃仁饼133g</p>
+										<p class="price">￥13</p>
+									</div>
+								</a>
+							</li>
+							
+						</ul>
+                   </div>
+
+		
+		<!--详情及评论-->
+        <div class="fr goodrightMain clearfix">
+        	
+        	
+        	<div class="detailinfo_tab pr clearfix stayTab">
+                <div class="inforTitle  clearfix fl">
+                    <a class="current" href="javascript:;">商品详情</a>
+                    <a href="javascript:;" class="">产品评论</a>
+                </div>
+                <a class="btnAddCar fr" href="javascript:;" style="display: inline;">放入购物车</a>
+                <span class="price fr" id="price_current_p" style="display: inline;">￥76.00</span>
+                
+                <div class="phone_code fr pr">
+                    <span><em>手机扫描下单</em></span>
+<!--                     <div class="scan_code"  id="qrcode"> -->
+<!--                     	<img width="123" height="123" src="theme/lber/zh_cn/screen/images/phone_code_big.png"> -->
+<!--                     </div> -->
+                      <script type="text/javascript" src="http://lbs.lber.com.cn/theme/lber/zh_cn/screen/js/qrcode.js"></script>
+                   <div class="scan_code" id="qrcode"><div><img src="data:image/gif;base64,R0lGODdhegB6AIAAAAAAAP///ywAAAAAegB6AAAC/4yPqcvtD6OctNqLs968+w+G4kiW5omm6sq27qsC8kzTSA3c+GzIin8A4nq5wK5G/B2RkyWTaAsukwkgdWgsOoVF3bYbsS7E3LL27H1mv+J0lMpoP+S6+vrMhd/f+218Z/dHYZaXdcVENwaGBYXH00DmWChBiGZ4iZWo5Lb4yKholwkGUXn4FzVZ9agX2chqWXpJKQk7KoVqqdQqFerZadqnR0oL7MBX+eV6u6q6GSwbRoxpq/vbl3zHKdj8rAkKWfuqHNt71Igr5+3tvF24i3tui+wrmk7N28QG7B4+vd/P7x+2WdgC+jtoMCHAhQNDOEmzTVg2bvEgwlBkbllEaP/KAj3rWGKePWd8Dj3UiG/cvZMWRMp7CdLkFJSvUnEqWSFSLHRqLPbymXLZJ5UtO+2k15MmPp0wVWW0uM7pylou2U2UuYuo0HsYcAqkhZNpOWZioQ3tEDVVRrVUHdWcyRPehbS5rvX7qjVePbB1B/H9dNbq2ERZOS6V5lcvoK3D2iUVF/Tnx3zqXh5ze/itxMuAH+dkJniyGcll7THlDHou5ne+sJKdStiy7NGGZ+WdprDzqanVqtGOuvttYZCn616+ydejBrkVI181i8ioNcXUnRfldxzlPOVK10qHzH0Y9tdQk1t/7r08d+Dg2N5m2X6x8NbnJfp1P7G4V6m6t+L/37hcdP/hZlxTYw1GHnQc7AUegQ1uhplrrIUHTjHQPeWffPXV9k2D+znm4UzInVWZbUGVZeJ4cflBYHYS0ofhgI0htBgbMGrIWnp2SWZffHLZtKGFroXWm2HMRSOKkEEehCCRUkEIZGI7dmPgYTnC1ZaLz3VlXpIUWWlNQVkmGBOS32HEkGxFejmhgkrdd+aabRVZ3o9hFghUUYod2VyZNtLJZIbD5bMnfdq8aReJCZqGI1fx+VnliBoOOYcajJZpDFKhxfYnN4HxN512qRF0o5LN/fZXo5RGmQGbd4Eq04sxjmnqZ7QBZad3I6FXo3l52hphdzfq2hRquSb1YTSy/47KoUqd3kacjcyCmCizlbnUGZDG6gNsj5rxGiuYyDnLbbLBNXthsOMdmCG5YrIHpWdfFYaaRwaR662yoJbYYqj1nvgqT/nOiOq5pA3bF2PtirvBuhyGNaeDD1uq6patwvbqP/Za22ts4fZJKJpK3pvubgJ/c+tkUr5YZ5VtUnoogvB22G9pqdGLp8o6b3fxrMf2Jx7Fg2bHatDZIgx0pUevt2jCpK7aK75TPgjrk9VyqWKXqyGl5bU3cy0vml5iuuGgIJN9sJMmR/crhVSfbTFJCc8M38bRQnpy107nN63SkwJ8t8UMgpuZyHFTNhvH4ZotsVUkAwqnb4pLzHjKdv8HCrmZnCLLudxrS74s2n5vDjHEnoudeOiHcwl3vq5+rHDRojkq5adeK4R3qT6GWruafI9bdcxgHq0t7Sj7fiSGcCta6KG7Pl2t8kYWuC20NFY3s7vcMj2f84YWznP2iDJdnOv+Slc6xW77nSmgY9OMs6JJi+842Pv5/DdkebNI/5cr3t8o6elPU9HbmwdSlr5f6Q2ACVxdw9T1NRQJS3gU5BvdtrevhWisZgjDngERV7eF4e56V6Nc1NBlImqFaH+ZkyDspJbC413uVN+DlAKDBUN9uepKR2neBDFXwE+1j0qB20vW/rVBSQmwUjT0IbuqUrIvgawhKWJbCZ+Yqm9rke81ISSYFfe3ovoJjxyGEyITiWhBaTAPYEQLWxhVM8SggU5h6qFjoHS0MpplilHls1ofLYRHEGJpibuymccA578P7pF/IpLiHQkoRue87CKUrKQlL4nJTGpyk5zspCc/CcpQinKUpNRAAQAAOw==" width="122" height="122"></div></div>
+               </div>
+                
+            </div>
+            
+            
+            <div class="information clearfix" style="margin-top: 38px;">
+            	<!--商品详情-->
+            	<div class="detail" style="display: block;">
+            			﻿
+				<div class="text"><!--<h5>商品说明</h5>--><!--p>{$goods_txt_desc}</p--></div>
+				
+				<div align="center" class="pic">
+				<p><img src="http://www.lber.com.cn:8080/image/web/upload/goods_tuihuo/tuihuo2.jpg"></p>
+				
+				<p><img src="http://www.lber.com.cn:8080/image/web/upload/goods_desc/MZITTDBXXL0015/MZITTDBXXL0015_BXXL_01.jpg"></p>
+				
+				<p><img src="http://www.lber.com.cn:8080/image/web/upload/goods_desc/MZITTDBXXL0015/MZITTDBXXL0015_BXXL_02.jpg"></p>
+				
+				</div>                </div><!--detail ed-->
+            
+            	<!--产品评论-->
+            	<div class="comment none clearfix" style="display: block;">
+                	<div class="co_mark clearfix">
+                    	<p class="mark fl"></p>
+                        <ul class="stars fl">
+                        	                        </ul>
+                        <p class="ml25 cb f14 color6">最近有<span class="colorRed2">0</span>人评价</p>
+                    </div>
+                    
+                    <div class="three_standard clearfix">
+                    	<ul>
+                        	<li>商品质量<span class="bar"><em style="width:0%"></em></span></li>
+                            <li>描述一致<span class="bar"><em style="width:0%"></em></span></li>
+                            <li>发货速度<span class="bar"><em style="width:0%"></em></span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="to_comment clearfix">
+                    	<p class="f14 color6">我购买过这个商品</p>
+                        <p class="comment_btn">我要评价</p>
+                    </div>
+                    
+                    <div class="comment_list clearfix">
+                    	<div class="comment_title">
+                        	<a href="javascript:;" class="current">全部评论</a>
+                            <a href="javascript:;">好评(0)</a>
+                            <a href="javascript:;">中评(0)</a>
+                            <a href="javascript:;">差评(0)</a>
+                            <a href="javascript:;">有图(0)</a>
+                        </div>
+                    <div id="all_commentList">
+					<div class="comment_con">
+						<dl class="rule-item mt10 clearfix">
+					     	<dt><img src="images/tuijian.jpg"/></dt>
+					     	<dd>
+					     		<div class="clearfix">
+					     			<div class="div"></div>
+						     		<div class="grade" data-number = "3"></div>
+						     		<p class="grade-txt mt10">还好；还算满意，性价比还是蛮高的！</p>
+						     		<div class="bottom-bar clearfix mt10">
+						     			<span class="fl">11:00</span>
+						     		</div>
+					     		</div>
+					     	</dd>
+					     </dl>
+					     <dl class="rule-item mt10 clearfix">
+					     	<dt><img src="images/tuijian.jpg"/></dt>
+					     	<dd>
+					     		<div class="clearfix">
+					     			<div class="div"></div>
+						     		<div class="grade" data-number = "3"></div>
+						     		<p class="grade-txt mt10">还好；还算满意，性价比还是蛮高的！</p>
+						     		<div class="bottom-bar clearfix mt10">
+						     			<span class="fl">11:00</span>
+						     		</div>
+					     		</div>
+					     	</dd>
+					     </dl>
+					     
+		     
+          </div>      
+          <script type="text/javascript">
+			$(document).ready(function() {
+			 $('.grade').raty({
+			 	path:"images",
+			 	number: function() {
+				    return $(this).attr('data-number');
+				},
+				readOnly: true, 
+				score: 3
+			 });
+			});			
+		</script>
+                
+   
+    </div><!--w1200 ed-->
+    
+    
+</div>
+</body>
+</html>
