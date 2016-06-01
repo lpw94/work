@@ -135,9 +135,9 @@
 		.scroll_box ul li img{ display:block; width:1920px; height:449px;}
 	.scroll_box .prev, .scroll_box .next,
     .scroll_box2 .prev, .scroll_box2 .next,
-    .classify_silde .prev, .classify_silde .next{  no-repeat scroll 0 0;cursor: pointer;height: 38px;width: 39px;position: absolute;top: 230px; z-index:3; display:block; }
-	.scroll_box .prev{ left: 50%; margin-left:-580px;}
-	.scroll_box .next{background-position:0px -38px; right:50%; margin-right:-580px;}
+    .classify_silde .prev, .classify_silde .next{cursor: pointer;height: 59px;width: 31px;position: absolute;top: 230px; z-index:3; display:block; }
+	.scroll_box .prev{background: url(../images/qg_left_img.png) 0 0 no-repeat; z-index:9999;left: 60%; margin-left:-580px;}
+	.scroll_box .next{background: url(../images/qg_right_img.png) 0 0 no-repeat; z-index:9999;right:60%; margin-right:-550px;}
 		.scroll_nav{position:absolute; left:50%; bottom:10px; text-align:center;}
 		.scroll_nav li{ float:left; display:inline; width:16px; height:16px; line-height:45px; margin-right:7px; cursor:pointer; background:url(../images/circle.png) no-repeat; overflow:hidden;}
 		.scroll_nav li.current{ background:url(../images/circle1.png) no-repeat;}
