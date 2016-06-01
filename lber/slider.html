@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/basic.css"/>
+		<style type="text/css">
+
+		
+		
+		
+		.slideBox {
+			width: 100%;
+			margin: 0 auto;
+			overflow: hidden;
+			position: relative;
+		}
+		
+		.slideBox .hd {
+			height: 15px;
+			overflow: hidden;
+			position: absolute;
+			margin-left: 50%;
+			bottom: 10px;
+			z-index: 1;
+		}
+		
+		.slideBox .hd ul {
+			overflow: hidden;
+			zoom: 1;
+			float: left;
+		}
+		
+		.slideBox .hd ul li {
+			float: left;
+			margin-right: 5px;
+			width: 10px;
+			height: 10px;
+			line-height: 14px;
+			text-align: center;
+			background: #fff;
+			cursor: pointer;
+			border-radius: 50%;
+		}
+		
+		.slideBox .hd ul li.on {
+			background: #F33;
+			color: #fff;
+		}
+		
+		.slideBox .bd {
+			position: relative;
+			height: 100%;
+			z-index: 0;
+		}
+		
+		.slideBox .bd li {
+			zoom: 1;
+			vertical-align: middle;
+		}
+		
+		.slideBox .bd img {
+			width: 100%;
+			display: block;
+		}
+		/* 下面是前/后按钮代码，如果不需要删除即可 */
+		
+		.slideBox .prev,
+		.slideBox .next {
+			position: absolute;
+			left: 3%;
+			top: 50%;
+			margin-top: -25px;
+			display: block;
+			width: 32px;
+			height: 40px;
+			background: url(images/slide-btn.png) -2px -15px no-repeat;
+			filter: alpha(opacity=50);
+			opacity: 0.5;
+		}
+		
+		.slideBox .next {
+			left: auto;
+			right: 3%;
+			background-position: -48px -14px;
+		}
+		
+		.slideBox .prev:hover,
+		.slideBox .next:hover {
+			filter: alpha(opacity=100);
+			opacity: 1;
+		}
+		
+		.slideBox .prevStop {
+			display: none;
+		}
+		
+		.slideBox .nextStop {
+			display: none;
+		}
+		
+		
+		</style>
+	</head>
+	<body>
+		
+		
+		<!--效果html开始-->
+<div id="slideBox" class="slideBox">
+  
+  <div class="bd">
+    <ul>
+      <li><a href="#"><img src="picture/banner-nav0513.jpg" /></a></li>
+      <li><a href="#"><img src="picture/banner-nav511.jpg" /></a></li>
+      <li><a href="#"><img src="picture/banner-nav513.jpg" /></a></li>
+      <li><a href="#"><img src="picture/banner-nav0513.jpg" /></a></li>
+      <li><a href="#"><img src="picture/banner-nav511.jpg" /></a></li>
+      <li><a href="#"><img src="picture/banner-nav513.jpg" /></a></li>
+    </ul>
+    
+  </div>
+  <div class="hd">
+    <ul>
+    	<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+    </ul>
+  </div>
+  <!-- 下面是前/后按钮代码，如果不需要删除即可 --> 
+  <a class="prev" href="javascript:void(0)"></a> <a class="next" href="javascript:void(0)"></a>
+</div>
+
+<p style="text-align: center;">a</p>
+
+		
+		
+		<script src="js/jquery-1.7.min.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="js/jquery.superslide.2.1.1.js" type="text/javascript" charset="utf-8"></script>
+		<script language="javascript">
+		jQuery(".slideBox").slide({mainCell:".bd ul",effect:"fold",autoPlay:true});
+		</script>
+	    <!--<script type="text/javascript">
+		jQuery(".slideTxtBox").slide({effect:"leftLoop",autoPlay:true,trigger:"click",pnLoop:false,delayTime:500,interTime:3000});
+		</script>-->
+	</body>
+</html>

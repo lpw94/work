@@ -1,0 +1,7 @@
+﻿文件下载网址  =>  文件保存路径
+无法从以下标签捕获到Image链接：<img class="logo" src="-->
+http://lbs.lber.com.cn/theme/lber/zh_cn/screen/images/check_ed2.png  =>  E:\504509959\FileRecv\扒站小工具\www.lber.com.cn\images\check_ed2.png
+http://lbs.lber.com.cn/theme/lber/zh_cn/screen/images/share.png  =>  E:\504509959\FileRecv\扒站小工具\www.lber.com.cn\images\share.png
+http://lbs.lber.com.cn/theme/lber/zh_cn/screen/images/check_ed.png  =>  E:\504509959\FileRecv\扒站小工具\www.lber.com.cn\images\check_ed.png
+http://lbs.lber.com.cn/theme/lber/zh_cn/screen/images/check2.png  =>  E:\504509959\FileRecv\扒站小工具\www.lber.com.cn\images\check2.png
+http://lbs.lber.com.cn/theme/lber/zh_cn/screen/images/check_default.png  =>  E:\504509959\FileRecv\扒站小工具\www.lber.com.cn\images\check_default.png
