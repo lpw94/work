@@ -1,4 +1,0 @@
-﻿文件下载网址  =>  文件保存路径
-http://120.76.26.17/images/201507/thumb_img/209_thumb_G_1437583601151.jpg  =>  E:\504509959\FileRecv\扒站小工具\120.76.26.17\picture\209_thumb_g_1437583601151.jpg
-http://120.76.26.17/api/cron.php?t=  =>  E:\504509959\FileRecv\扒站小工具\120.76.26.17\picture\cron.php
-http://120.76.26.17/images/1409272951415985699.jpg  =>  E:\504509959\FileRecv\扒站小工具\120.76.26.17\picture\1409272951415985699.jpg
